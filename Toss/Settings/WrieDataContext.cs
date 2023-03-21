@@ -8,6 +8,7 @@ using Toss.Forms;
 using Toss.Forms.UI.Views;
 using Toss.Forms.ViewModels;
 using Toss.Main.Local.ViewModels;
+using Toss.Main.Themes.uc;
 using Toss.Main.UI.Views;
 
 namespace Toss.Settings
@@ -19,6 +20,7 @@ namespace Toss.Settings
             items.Register<MainWindow, MainWindowViewModel>();
             items.Register<MainContent,MainContentViewModel>();
             items.Register<MyAssetContent, MyAssetContentViewModel>();
+            items.Register<ucAssetItems, ucAssetItemsViewModel>();
         }
     }
 }

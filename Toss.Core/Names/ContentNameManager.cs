@@ -11,5 +11,6 @@ namespace Toss.Core.Names
     {
         public static string Main => nameof(Contents.Main);
         public static string MyAsset => nameof(Contents.MyAsset);
+        public static string ucAssetItems => nameof(Contents.ucAssetItems);
     }
 }

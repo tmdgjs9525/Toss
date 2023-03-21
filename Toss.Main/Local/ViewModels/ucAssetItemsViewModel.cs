@@ -4,12 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Toss.Core.Enums
+namespace Toss.Main.Local.ViewModels
 {
-    public enum Contents
+    public partial class ucAssetItemsViewModel
     {
-        Main,
-        MyAsset,
-        ucAssetItems,
     }
 }

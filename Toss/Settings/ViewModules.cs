@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Toss.Core.Names;
 using Toss.Forms.UI.Views;
+using Toss.Main.Themes.uc;
 using Toss.Main.UI.Views;
 
 namespace Toss.Settings
@@ -22,7 +23,6 @@ namespace Toss.Settings
         public void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterSingleton<IViewable,MainContent>(ContentNameManager.Main);
-            containerRegistry.RegisterSingleton<IViewable, MyAssetContent>(ContentNameManager.MyAsset);
-        }
+            containerRegistry.RegisterSingleton<IViewable, MyAssetContent>(ContentNameManager.MyAsset);        }
     }
 }
