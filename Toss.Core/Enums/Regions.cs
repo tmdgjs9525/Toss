@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Toss.Core
+namespace Toss.Core.Enums
 {
-    public interface ILoadable
+    public enum Regions
     {
-        void OnLoaded(PrismContent view);
+        MainRegion,
+        ContentRetgion,
     }
 }

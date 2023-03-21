@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Jamesnet.Wpf.Controls;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,14 +14,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Toss.Forms.UI.Views
+namespace Toss.Forms
 {
-
-    public class MainWindow : Window
+    /// <summary>
+    /// MainWindow.xaml에 대한 상호 작용 논리
+    /// </summary>
+    public partial class MainWindow : JamesWindow
     {
-        static MainWindow()
+        public MainWindow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(MainWindow), new FrameworkPropertyMetadata(typeof(MainWindow)));
+            InitializeComponent();
         }
     }
 }

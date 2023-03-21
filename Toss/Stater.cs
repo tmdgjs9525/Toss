@@ -13,8 +13,9 @@ namespace Toss
         public static void Main()
         {
             _ = new App()
-                .WireViewModel()
-                .AddModule<DirectModules>()
+                .AddInversionModule<ViewModules>()
+                .AddInversionModule<DirectModules>()
+                .AddWireDataContext<WrieDataContext>()
                 .Run();
         }
     }

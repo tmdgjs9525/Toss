@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Jamesnet.Wpf.Controls;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,7 +17,7 @@ using Toss.Core;
 
 namespace Toss.Forms.UI.Views
 {
-    public class MyAssetContent : PrismContent
+    public class MyAssetContent : JamesContent
     {
         static MyAssetContent()
         {

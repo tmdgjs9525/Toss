@@ -14,10 +14,6 @@ namespace Toss.Settings
     {
         public void OnInitialized(IContainerProvider containerProvider)
         {
-            IRegionManager regionManager = containerProvider.Resolve<IRegionManager>();
-            regionManager.RegisterViewWithRegion("MyAssetRegion", ContentName.MyAssetContent);
-            regionManager.RegisterViewWithRegion("MainRegion", ContentName.MainContent);
-
         }
 
         public void RegisterTypes(IContainerRegistry containerRegistry)
