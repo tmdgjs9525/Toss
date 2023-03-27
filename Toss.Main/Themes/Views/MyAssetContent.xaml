@@ -7,6 +7,7 @@
     xmlns:uc ="clr-namespace:Toss.Main.Themes.uc">
     <Style TargetType="{x:Type views:MyAssetContent}">
         <Setter Property="BorderThickness" Value="0" />
+        <!--<Setter Property="VerticalAlignment" Value="Stretch"/>-->
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type views:MyAssetContent}">
@@ -22,10 +23,17 @@
                                 Background="Transparent"
                                 BorderThickness="{TemplateBinding BorderThickness}"
                                 FontSize="20"
-                                FontStyle="Oblique"
+                                FontWeight="Bold"
                                 Foreground="White"
-                                Text="Asset" />
-                            <uc:ucAssetItems/>
+                                Text="{Binding Menu}" />
+                            <ListView Background="Transparent" BorderThickness="0" Margin="0,20,0,0" ItemsSource="{Binding Assets}">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <uc:ucAssetItems assetName="{Binding AssetName}" money="{Binding Money}"/>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                            
 
                         </StackPanel>
                     </Border>

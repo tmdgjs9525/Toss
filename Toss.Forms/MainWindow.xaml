@@ -15,6 +15,11 @@
     mc:Ignorable="d">
 
     <Grid>
-        <james:JamesRegion RegionName="{x:Static names:RegionNameManager.MainRegion}" />
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <james:JamesRegion Grid.Row="0" RegionName="{x:Static names:RegionNameManager.MainRegion}" />
+
     </Grid>
 </james:JamesWindow>

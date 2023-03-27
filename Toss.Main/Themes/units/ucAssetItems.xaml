@@ -42,12 +42,13 @@
                 Grid.Row="0"
                 Margin="0,0,0,0"
                 Foreground="Gray"
-                Text="보통예금(IBK나라사랑통장)" />
+                Text="{Binding AssetName}"
+                 />
             <TextBlock
                 Grid.Row="1"
                 FontSize="17"
                 Foreground="White"
-                Text="1,912,538원" />
+                Text="{Binding Money}" />
         </Grid>
         <Button
             Grid.Column="2"
