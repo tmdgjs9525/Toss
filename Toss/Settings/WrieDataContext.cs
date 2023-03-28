@@ -20,7 +20,7 @@ namespace Toss.Settings
             items.Register<MainWindow, MainWindowViewModel>();
             items.Register<MainContent,MainContentViewModel>();
             items.Register<MyAssetContent, MyAssetContentViewModel>();
-            items.Register<ucAssetItems, ucAssetItemsViewModel>();
+            //items.Register<ucAssetItems, ucAssetItemsViewModel>();
         }
     }
 }

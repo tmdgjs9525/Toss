@@ -25,32 +25,5 @@ namespace Toss.Main.Themes.uc
         {
             InitializeComponent();
         }
-
-
-
-        public string assetName
-        {
-            get { return (string)GetValue(assetNameProperty); }
-            set { SetValue(assetNameProperty, value); }
-        }
-
-        // Using a DependencyProperty as the backing store for MyProperty.  This enables animation, styling, binding, etc...
-        public static readonly DependencyProperty assetNameProperty =
-            DependencyProperty.Register("assetName", typeof(string), typeof(ucAssetItems), new PropertyMetadata(string.Empty));
-
-
-
-        public string money
-        {
-            get { return (string)GetValue(moneyProperty); }
-            set { SetValue(moneyProperty, value); }
-        }
-
-        // Using a DependencyProperty as the backing store for MyProperty.  This enables animation, styling, binding, etc...
-        public static readonly DependencyProperty moneyProperty =
-            DependencyProperty.Register("money", typeof(string), typeof(ucAssetItems), new PropertyMetadata(string.Empty));
-
-
-
     }
 }
