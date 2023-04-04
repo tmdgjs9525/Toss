@@ -4,7 +4,7 @@
     xmlns:james="clr-namespace:Jamesnet.Wpf.Controls;assembly=Jamesnet.Wpf"
     xmlns:names="clr-namespace:Toss.Core.Names;assembly=Toss.Core"
     xmlns:views="clr-namespace:Toss.Forms.UI.Views"
-    xmlns:uc ="clr-namespace:Toss.Main.Themes.uc">
+    xmlns:units ="clr-namespace:Toss.Main.UI.units">
     <Style TargetType="{x:Type views:MyAssetContent}">
         <Setter Property="BorderThickness" Value="0" />
         <!--<Setter Property="VerticalAlignment" Value="Stretch"/>-->
@@ -29,7 +29,7 @@
                             <ListView Background="Transparent" BorderThickness="0" Margin="0,20,0,0" ItemsSource="{Binding Assets}">
                                 <ListView.ItemTemplate>
                                     <DataTemplate>
-                                        <uc:ucAssetItems/>
+                                        <units:AssetItem/>
                                     </DataTemplate>
                                 </ListView.ItemTemplate>
                             </ListView>
