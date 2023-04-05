@@ -1,20 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Toss.Core.Models
+﻿namespace Toss.Core.Models
 {
     public class AssetModel
     {
         
         public string AssetName { get; set; }
         public string Money { get; set; }
-        public AssetModel(string AssetName, string Money)
+        public string ImageSource { get; set; }
+        public AssetModel(string AssetName, string Money, string ImageSource)
         {
             this.AssetName = AssetName;
             this.Money = Money;
+            this.ImageSource = ImageSource;
         }
     }
 }

@@ -12,25 +12,18 @@
                     <Border Background="{TemplateBinding Background}">
                         <Grid>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="70" />
-                                <ColumnDefinition Width="200" />
                                 <ColumnDefinition Width="auto" />
+                                <ColumnDefinition Width="220" />
+                                <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
-                            <Canvas
+                            <Image
                                 Grid.Column="0"
                                 Width="50"
                                 Height="50"
+                                Source="{Binding ImageSource}"
                                 HorizontalAlignment="Center"
                                 VerticalAlignment="Center">
-                                <Ellipse
-                                    Canvas.Left="5"
-                                    Canvas.Top="5"
-                                    Width="40"
-                                    Height="40"
-                                    HorizontalAlignment="Left"
-                                    VerticalAlignment="Top"
-                                    Fill="Blue" />
-                            </Canvas>
+                            </Image>
                             <Grid
                                 Grid.Column="1"
                                 Margin="10,0,0,0"
@@ -50,20 +43,96 @@
                                     Foreground="White"
                                     Text="{Binding Money}" />
                             </Grid>
+
+
                             <Button
                                 Grid.Column="2"
                                 Width="40"
                                 Height="25"
-                                HorizontalAlignment="Right"
-                                Background="Gray"
+                                BorderThickness="0"
                                 Content="송금"
-                                Foreground="WhiteSmoke">
-                                <Button.Resources>
-                                    <Style TargetType="Border">
-                                        <Setter Property="CornerRadius" Value="5" />
+                                Foreground="#C1C0C5" >
+                                <Button.Triggers>
+                                    <EventTrigger RoutedEvent="Button.PreviewMouseLeftButtonDown">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <DoubleAnimation
+                                                    Storyboard.TargetName="btnClickEffect"
+                                                    Storyboard.TargetProperty="Opacity"
+                                                    From="0"
+                                                    To="1"
+                                                    Duration="0:0:0" />
+                                                <DoubleAnimation
+                                                    Storyboard.TargetName="btnClickEffect"
+                                                    Storyboard.TargetProperty="Width"
+                                                    From="20"
+                                                    To="50"
+                                                    Duration="0:0:0.2" />
+                                                <DoubleAnimation
+                                                    Storyboard.TargetName="btnClickEffect"
+                                                    Storyboard.TargetProperty="Height"
+                                                    From="10"
+                                                    To="50"
+                                                    Duration="0:0:0.2" />
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+                                    <EventTrigger RoutedEvent="Button.PreviewMouseLeftButtonUp">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <DoubleAnimation
+                                                    Storyboard.TargetName="btnClickEffect"
+                                                    Storyboard.TargetProperty="Opacity"
+                                                    From="1"
+                                                    To="0"
+                                                    Duration="0:0:0.2" />
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+                                </Button.Triggers>
+                                <Button.Style>
+                                    <Style TargetType="Button">
+                                        <Setter Property="Background" Value="#2C2C34" />
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="{x:Type Button}">
+                                                    <Border
+                                                        Background="{TemplateBinding Background}"
+                                                        BorderThickness="{TemplateBinding BorderThickness}"
+                                                        CornerRadius="4">
+                                                        <Grid>
+                                                            <ContentPresenter
+                                                                Margin="{TemplateBinding Padding}"
+                                                                HorizontalAlignment="Center"
+                                                                VerticalAlignment="Center"
+                                                                RecognizesAccessKey="True" />
+
+                                                        </Grid>
+                                                    </Border>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Background" Value="#AA2C2C34" />
+                                            </Trigger>
+
+                                        </Style.Triggers>
+
                                     </Style>
-                                </Button.Resources>
+
+                                </Button.Style>
                             </Button>
+                            <Border Grid.Column="2" Width="40" Height="25">
+                                <Ellipse
+                                x:Name="btnClickEffect"
+                                Width="20"
+                                Height="10" Opacity="0"
+                                IsHitTestVisible="False"
+                                    VerticalAlignment="Center"
+                                Fill="#AA2C2C34" ></Ellipse>
+                            </Border>
+                            
                         </Grid>
 
                     </Border>
