@@ -69,5 +69,35 @@ namespace Toss.Main.Properties {
                 return ((byte[])(obj));
             }
         }
+        
+        /// <summary>
+        ///   System.Byte[] 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static byte[] KaKaoCircleImage {
+            get {
+                object obj = ResourceManager.GetObject("KaKaoCircleImage", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Byte[] 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static byte[] KBCircleImage {
+            get {
+                object obj = ResourceManager.GetObject("KBCircleImage", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Byte[] 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static byte[] TossCircleImage {
+            get {
+                object obj = ResourceManager.GetObject("TossCircleImage", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
     }
 }

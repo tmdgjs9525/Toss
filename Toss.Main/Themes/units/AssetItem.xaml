@@ -3,38 +3,26 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:james="clr-namespace:Jamesnet.Wpf.Controls;assembly=Jamesnet.Wpf"
     xmlns:names="clr-namespace:Toss.Core.Names;assembly=Toss.Core"
-    xmlns:views="clr-namespace:Toss.Main.UI.units">
+    xmlns:units="clr-namespace:Toss.Main.UI.units"
+    xmlns:convert="clr-namespace:Toss.Core.Converter;assembly=Toss.Core">
 
-    <Style TargetType="{x:Type views:AssetItem}">
+    <convert:BankImageConverter x:Key="BankImageConvert"/>
+    <Style TargetType="{x:Type units:AssetItem}">
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type views:AssetItem}">
+                <ControlTemplate TargetType="{x:Type units:AssetItem}">
                     <Border Background="{TemplateBinding Background}">
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="auto" />
-                                <ColumnDefinition Width="220" />
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
-                            <Image
-                                Grid.Column="0"
-                                Width="50"
-                                Height="50"
-                                Source="{Binding ImageSource}"
-                                HorizontalAlignment="Center"
-                                VerticalAlignment="Center">
-                            </Image>
-                            <Grid
+                        <james:JamesGrid Columns="auto, 220, *">
+                            <Image Width="47" Height="47" Source="{Binding BankType, Converter={StaticResource BankImageConvert}}" />
+  
+                            <james:JamesGrid
                                 Grid.Column="1"
                                 Margin="10,0,0,0"
-                                VerticalAlignment="Center">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="20" />
-                                    <RowDefinition Height="auto" />
-                                </Grid.RowDefinitions>
+                                VerticalAlignment="Center"
+                                Rows="20, auto">
                                 <TextBlock
                                     Grid.Row="0"
-                                    Margin="0,0,0,0"
+                                    Margin="0"
                                     Foreground="Gray"
                                     Text="{Binding AssetName}" />
                                 <TextBlock
@@ -42,99 +30,15 @@
                                     FontSize="17"
                                     Foreground="White"
                                     Text="{Binding Money}" />
-                            </Grid>
+                            </james:JamesGrid>
 
-
-                            <Button
+                            <units:CustomButton
                                 Grid.Column="2"
                                 Width="40"
                                 Height="25"
                                 BorderThickness="0"
-                                Content="송금"
-                                Foreground="#C1C0C5" >
-                                <Button.Triggers>
-                                    <EventTrigger RoutedEvent="Button.PreviewMouseLeftButtonDown">
-                                        <BeginStoryboard>
-                                            <Storyboard>
-                                                <DoubleAnimation
-                                                    Storyboard.TargetName="btnClickEffect"
-                                                    Storyboard.TargetProperty="Opacity"
-                                                    From="0"
-                                                    To="1"
-                                                    Duration="0:0:0" />
-                                                <DoubleAnimation
-                                                    Storyboard.TargetName="btnClickEffect"
-                                                    Storyboard.TargetProperty="Width"
-                                                    From="20"
-                                                    To="50"
-                                                    Duration="0:0:0.2" />
-                                                <DoubleAnimation
-                                                    Storyboard.TargetName="btnClickEffect"
-                                                    Storyboard.TargetProperty="Height"
-                                                    From="10"
-                                                    To="50"
-                                                    Duration="0:0:0.2" />
-                                            </Storyboard>
-                                        </BeginStoryboard>
-                                    </EventTrigger>
-                                    <EventTrigger RoutedEvent="Button.PreviewMouseLeftButtonUp">
-                                        <BeginStoryboard>
-                                            <Storyboard>
-                                                <DoubleAnimation
-                                                    Storyboard.TargetName="btnClickEffect"
-                                                    Storyboard.TargetProperty="Opacity"
-                                                    From="1"
-                                                    To="0"
-                                                    Duration="0:0:0.2" />
-                                            </Storyboard>
-                                        </BeginStoryboard>
-                                    </EventTrigger>
-                                </Button.Triggers>
-                                <Button.Style>
-                                    <Style TargetType="Button">
-                                        <Setter Property="Background" Value="#2C2C34" />
-                                        <Setter Property="Template">
-                                            <Setter.Value>
-                                                <ControlTemplate TargetType="{x:Type Button}">
-                                                    <Border
-                                                        Background="{TemplateBinding Background}"
-                                                        BorderThickness="{TemplateBinding BorderThickness}"
-                                                        CornerRadius="4">
-                                                        <Grid>
-                                                            <ContentPresenter
-                                                                Margin="{TemplateBinding Padding}"
-                                                                HorizontalAlignment="Center"
-                                                                VerticalAlignment="Center"
-                                                                RecognizesAccessKey="True" />
-
-                                                        </Grid>
-                                                    </Border>
-                                                </ControlTemplate>
-                                            </Setter.Value>
-                                        </Setter>
-                                        <Style.Triggers>
-                                            <Trigger Property="IsMouseOver" Value="True">
-                                                <Setter Property="Background" Value="#AA2C2C34" />
-                                            </Trigger>
-
-                                        </Style.Triggers>
-
-                                    </Style>
-
-                                </Button.Style>
-                            </Button>
-                            <Border Grid.Column="2" Width="40" Height="25">
-                                <Ellipse
-                                x:Name="btnClickEffect"
-                                Width="20"
-                                Height="10" Opacity="0"
-                                IsHitTestVisible="False"
-                                    VerticalAlignment="Center"
-                                Fill="#AA2C2C34" ></Ellipse>
-                            </Border>
-                            
-                        </Grid>
-
+                                Content="송금" />
+                        </james:JamesGrid>
                     </Border>
                 </ControlTemplate>
             </Setter.Value>

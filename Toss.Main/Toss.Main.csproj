@@ -8,6 +8,9 @@
 
   <ItemGroup>
     <None Remove="Resources\IBKCircleImage.png" />
+    <None Remove="Resources\KaKaoCircleImage.png" />
+    <None Remove="Resources\KBCircleImage.png" />
+    <None Remove="Resources\TossCircleImage.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -20,6 +23,15 @@
 
   <ItemGroup>
     <Resource Include="Resources\IBKCircleImage.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\KaKaoCircleImage.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\KBCircleImage.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\TossCircleImage.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>

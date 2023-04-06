@@ -28,10 +28,10 @@ namespace Toss.Main.Local.ViewModels
             _containerProvider = containerProvider;
             Assets = new List<AssetModel>()
             {
-                new AssetModel("IBK기업은행", "1,912,152원", "/Toss.Main;component/Resources/IBKCircleImage.png"),
-                new AssetModel("IBK기업은행(나라사랑통장)", "2,616,322원", "/Toss.Main;component/Resources/IBKCircleImage.png"),
-                new AssetModel("국민은행", "1,234,567원", "/Toss.Main;component/Resources/IBKCircleImage.png"),
-                new AssetModel("국민은행", "1,234,567원", "/Toss.Main;component/Resources/IBKCircleImage.png"),
+                new AssetModel("IBK기업은행", "1,912,152원", Core.Enums.Banks.IBK.ToString()),
+                new AssetModel("IBK기업은행(나라사랑통장)", "2,616,322원", Core.Enums.Banks.IBK.ToString()),
+                new AssetModel("카카오뱅크", "1,234,567원", Core.Enums.Banks.Kakao.ToString()),
+                new AssetModel("카카오뱅크", "1,234,567원", Core.Enums.Banks.Kakao.ToString()),
             };
             Menu = "자산";
         }

@@ -121,4 +121,13 @@
   <data name="IBKCircleImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IBKCircleImage.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="KaKaoCircleImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\KaKaoCircleImage.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="KBCircleImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\KBCircleImage.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TossCircleImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TossCircleImage.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>
